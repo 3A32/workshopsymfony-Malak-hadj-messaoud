@@ -10,6 +10,7 @@
 <td>Participer</td>
 </tr>
 {% for i in tabFormation %}
+<!-- for j in i.nb_participants %}} !-->
 {% if i.Description == 'formation theorique' %}
 <tr>
 <td>{{i.ref|upper}}</td>
@@ -25,5 +26,24 @@
 {% endfor %}
 {% endif %}
 
+
 </table>
 Nb_Formation:{{tabFormation|length}}
+<br/>
+{% set somme = 0 %}
+somme :
+{% for s in tabFormation %}
+	{% set somme = somme+ s.nb_participants %}
+{% endfor %}
+{{somme}}
+<br/>
+la Formation :
+{% set max = 0 %}
+{% for f in tabFormation %}
+	{% set max = max(f.nb_participants, max) %}
+	{% if f.nb_participants == max %}
+		{{f.Titre}}
+	{% endif %}
+{% endfor %}
+a  le plus grand nombre de participants :
+{{max}}

@@ -23,7 +23,8 @@ class ClubController extends AbstractController
         $var2 = "J12";
         $formations = array(
             array(
-                'ref' => 'form147', 'Titre' => 'Formation Symfony4', 'Description' => 'formation pratique',
+                'ref' => 'form147', 'Titre' => 'Formation Symfony4',
+                'Description' => 'formation pratique',
                 'date_debut' => '12/06/2020', 'date_fin' => '19/06/2020',
                 'nb_participants' => 19
             ),
