@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+       
+        <a href="{{ path('app_AddStudent') }}">
+        Add Student
+                    
+    </a>
+        <table border="1">
+            <thead>
+                <tr>
+                    
+                    <th>
+                        NSC
+                                                
+                    </th>
+                    <th>
+                        email
+                                                
+                    </th>
+                    <th>
+                        Classroom
+                                                
+                    </th>
+                    <th>
+                        Club
+                                                
+                    </th>
+                    <th>
+                        Update
+                                                
+                    </th>
+                    <th>
+                        Delete
+                                                
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in tabStudents %}
+                    <tr>
+                       
+                        <td>
+                            {{ i.NSC }}
+                        </td>
+                        <th>
+                            {{ i.email }}
+                                                    
+                        </th>
+                        <td>
+                            {{ i.Classroom.name }}
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <a href="{{ path('app_updateStudent',{'NSC':i.NSC}) }}">
+                                Update
+                                                                
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('app_removeStudent',{'NSC':i.NSC}) }}">
+                                Delete
+                                                                
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </body>
+</html>

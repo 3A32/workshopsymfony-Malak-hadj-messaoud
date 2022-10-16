@@ -1,13 +1,14 @@
-
-
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
         <body>
-            <a href="{{ path('app_AddClub') }}">
-                Add Club
+            <a href="{{ path('app_AddClassroom') }}">
+                Add Classroom
                             
             </a>
-           
+            <a href="{{ path('app_AddStudent') }}">
+            Add Student
+                        
+        </a>
             <table border="1">
                 <thead>
                     <tr>
@@ -31,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i in tabClubs %}
+                    {% for i in tabClassrooms %}
                         <tr>
                             <td>
                                 {{ i.id }}
@@ -41,13 +42,13 @@
                             </td>
                            
                             <td>
-                                <a href="{{ path('app_updateClub',{'id':i.id}) }}">
+                                <a href="{{ path('app_updateClassroom',{'id':i.id}) }}">
                                     Update
                                                                     
                                 </a>
                             </td>
                             <td>
-                                <a href="{{ path('app_removeClub',{'id':i.id}) }}">
+                                <a href="{{ path('app_removeClassroom',{'id':i.id}) }}">
                                     Delete
                                                                     
                                 </a>
