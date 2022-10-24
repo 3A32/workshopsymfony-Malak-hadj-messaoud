@@ -22,13 +22,7 @@ class Student
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\ManyToMany(targetEntity: Club::class, inversedBy: 'club_student')]
-    private Collection $student_club;
-
-    public function __construct()
-    {
-        $this->student_club = new ArrayCollection();
-    }
+    
 
 
 
@@ -68,29 +62,8 @@ class Student
         return $this;
     }
 
-    /**
-     * @return Collection<int, Club>
-     */
-    public function getStudentClub(): Collection
-    {
-        return $this->student_club;
-    }
 
-    public function addStudentClub(Club $studentClub): self
-    {
-        if (!$this->student_club->contains($studentClub)) {
-            $this->student_club->add($studentClub);
-        }
 
-        return $this;
-    }
-
-    public function removeStudentClub(Club $studentClub): self
-    {
-        $this->student_club->removeElement($studentClub);
-
-        return $this;
-    }
 
 
 }

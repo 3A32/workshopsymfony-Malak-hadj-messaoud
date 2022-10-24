@@ -78,5 +78,5 @@ class Classroom
             return 'NULL';
         }
         return (string) $this->name;
-    }//mech mawjouda 3andha
+    }
 }

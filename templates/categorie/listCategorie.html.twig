@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <a href="{{ path('app_AddCategorie') }}">
+        Add Categorie
+                    
+    </a>
+        <table border="1">
+            <thead>
+                <tr>
+                    
+                    <th>
+                        Name
+                                                
+                    </th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in tabCategories %}
+                    <tr>
+                       
+                        <td>
+                            {{ i.name }}
+                        </td>
+                    
+                       
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

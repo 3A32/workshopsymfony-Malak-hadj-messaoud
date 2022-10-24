@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <a href="{{ path('app_AddEvent') }}">
+        Add Event
+                    
+    </a>
+        <table border="1">
+            <thead>
+                <tr>
+                    
+                    <th>
+                        Id
+                                                
+                    </th>
+                    <th>
+                        Title
+                                                
+                    </th>
+                    <th>
+                        Date Debut
+                                                
+                    </th>
+                    <th>
+                        Date Fin
+                                                
+                    </th>
+                    <th>
+                        Action
+                                                
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in tabEvents %}
+                    <tr>
+                       
+                        <td>
+                            {{ i.id }}
+                        </td>
+                        <th>
+                            {{ i.title|upper }}
+                                                    
+                        </th>
+                        <td>
+                            {{ i.dateDebut.format('d/m/Y') }}
+                        </td>
+                        <td>
+                            {{ i.dateFin.format('d/m/Y') }}
+                        </td>
+                        <td>
+                            <a href="{{ path('app_updateEvent',{'id':i.id}) }}">
+                                Update
+                                                                
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        Nb_Event:{{tabEvents|length}}
+    </body>
+</html>
